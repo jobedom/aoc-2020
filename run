@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+LAST_FOLDER=$(find -type d | grep day | sort -r | head -n 1)
+PYTHONPATH=./utils pipenv run python "$LAST_FOLDER/part$1.py"
+
