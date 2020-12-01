@@ -1,6 +1,4 @@
 import os
 
 def init(filename):
-   abspath = os.path.abspath(filename)
-   dname = os.path.dirname(abspath)
-   os.chdir(dname)
+   os.chdir(os.path.dirname(os.path.abspath(filename)))
