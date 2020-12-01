@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+SCRIPT_PATH=$(dirname $0)
 LAST_FOLDER=$(find -type d | grep day | sort -r | head -n 1)
-pipenv run python "$LAST_FOLDER/part$1.py"
 
+export PYTHONPATH=$(realpath $SCRIPT_PATH)/utils
+
+pipenv run python "$LAST_FOLDER/problem.py"
