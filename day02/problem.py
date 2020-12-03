@@ -1,10 +1,10 @@
 import sys
 import re
 
-from misc import init
+from misc import init_day
 from input import get_file_lines
 
-init(__file__, 2)
+init_day(__file__, 2)
 
 test_pattern = re.compile(r'^(\d+)-(\d+)\s+(\w)\s*:\s*(\w+)$')
 

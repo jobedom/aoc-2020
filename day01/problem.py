@@ -1,8 +1,8 @@
-from misc import init
+from misc import init_day
 from input import get_file_numbers
 from indexes import unique_index_pairs, unique_index_triplets
 
-init(__file__, 1)
+init_day(__file__, 1)
 
 numbers = get_file_numbers('./input.txt')
 number_count = len(numbers)

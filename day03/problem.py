@@ -1,9 +1,9 @@
 import math
 
-from misc import init
+from misc import init_day
 from input import get_file_lines
 
-init(__file__, 3)
+init_day(__file__, 3)
 
 forest = get_file_lines('./input.txt')
 
