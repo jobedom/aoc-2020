@@ -22,5 +22,5 @@ def get_tree_count(slope_horizontal, slope_vertical):
 result_1 = get_tree_count(3, 1)
 result_2 = math.prod(get_tree_count(h, v) for (h, v) in [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)])
 
-print(f'Part1: {result_1}')
+print(f'Part 1: {result_1}')
 print(f'Part 2: {result_2}')
