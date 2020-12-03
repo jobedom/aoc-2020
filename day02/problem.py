@@ -18,7 +18,6 @@ for line in lines:
     (num1, num2, letter, sequence) = matches.groups()
     parsed_list.append((int(num1), int(num2), letter, sequence))
 
-
 valid_count_part1 = 0
 for (num1, num2, letter, sequence) in parsed_list:
     count_letter = len([char for char in sequence if char == letter])
@@ -32,4 +31,3 @@ for (num1, num2, letter, sequence) in parsed_list:
     if (sequence[num1 - 1] == letter) != (sequence[num2 - 1] == letter):
         valid_count_part2 += 1
 print(f'Part 2: {valid_count_part2}')
-
