@@ -1,4 +1,5 @@
 import os
 
-def init(filename):
-   os.chdir(os.path.dirname(os.path.abspath(filename)))
+
+def init(filename, day):
+    os.chdir(os.path.dirname(os.path.abspath(filename)))
