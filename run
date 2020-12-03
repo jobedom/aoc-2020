@@ -5,4 +5,5 @@ LAST_FOLDER=$(find -type d | grep day | sort -r | head -n 1)
 
 export PYTHONPATH=$(realpath $SCRIPT_PATH)/utils
 
+echo "--------------------------- $(basename "$LAST_FOLDER") ---------------------------"
 pipenv run python "$LAST_FOLDER/problem.py"
