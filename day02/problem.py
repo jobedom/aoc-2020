@@ -4,7 +4,7 @@ import re
 from misc import init
 from input import get_file_lines
 
-init(__file__)
+init(__file__, 2)
 
 test_pattern = re.compile(r'^(\d+)-(\d+)\s+(\w)\s*:\s*(\w+)$')
 

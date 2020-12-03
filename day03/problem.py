@@ -3,7 +3,7 @@ import math
 from misc import init
 from input import get_file_lines
 
-init(__file__)
+init(__file__, 3)
 
 forest = get_file_lines('./input.txt')
 

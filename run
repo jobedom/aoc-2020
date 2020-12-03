@@ -2,9 +2,7 @@
 
 SCRIPT_PATH=$(dirname "$0")
 LAST_FOLDER=$(find . -type d | grep day | sort -r | head -n 1)
-
 PYTHONPATH=$(realpath "$SCRIPT_PATH")/utils
 
-echo "--------------------------- $(basename "$LAST_FOLDER") ---------------------------"
 export PYTHONPATH
 pipenv run python "$LAST_FOLDER/problem.py"
