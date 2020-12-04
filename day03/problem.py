@@ -1,11 +1,11 @@
 import math
 
 from misc import init_day
-from input import get_file_lines
+from input import get_file_lines_with_no_blanks
 
 init_day(__file__, 3)
 
-forest = get_file_lines('./input.txt')
+forest = get_file_lines_with_no_blanks('./input.txt')
 
 
 def get_tree_count(slope_horizontal, slope_vertical):

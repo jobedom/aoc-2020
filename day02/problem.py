@@ -2,13 +2,13 @@ import sys
 import re
 
 from misc import init_day
-from input import get_file_lines
+from input import get_file_lines_with_no_blanks
 
 init_day(__file__, 2)
 
 test_pattern = re.compile(r'^(\d+)-(\d+)\s+(\w)\s*:\s*(\w+)$')
 
-lines = get_file_lines('./input.txt')
+lines = get_file_lines_with_no_blanks('./input.txt')
 parsed_list = []
 for line in lines:
     matches = test_pattern.match(line)
