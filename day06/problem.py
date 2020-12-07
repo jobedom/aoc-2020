@@ -42,7 +42,7 @@ def solve_part_2(part_answers):
     return sum(len(group) for group in group_answers)
 
 
-test_answers = get_file_lines('test1.txt')
+test_answers = get_file_lines('test.txt')
 
 assert solve_part_1(test_answers) == 11
 assert solve_part_2(test_answers) == 6
