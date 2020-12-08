@@ -9,7 +9,6 @@ class Machine:
         self.pc = 0
         self.acc = 0
         self.memory = []
-        self.pc_already_executed = {}
 
     def parse(self, mnemonics):
         self.memory = []
@@ -20,14 +19,14 @@ class Machine:
 
     def run(self):
         self.pc = 0
-        self.pc_already_executed = {}
         self.acc = 0
+        pc_already_executed = {}
         memory_size = len(self.memory)
         while self.pc < memory_size:
-            already_executed = self.pc_already_executed.get(self.pc, False)
+            already_executed = pc_already_executed.get(self.pc, False)
             if already_executed:
                 return True
-            self.pc_already_executed[self.pc] = True
+            pc_already_executed[self.pc] = True
             operation, arg = self.memory[self.pc]
             operation_method = getattr(self, f'operation_{operation}', None)
             if operation_method is None:
