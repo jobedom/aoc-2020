@@ -69,7 +69,7 @@ def solve_part_2(part2_input):
         machine.run()
         if not machine.looped:
             return machine.acc
-    raise OverflowError('Unable to patch!')
+    raise Exception('Unable to patch!')
 
 
 test_input = get_file_lines_with_no_blanks('test.txt')
