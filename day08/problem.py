@@ -9,6 +9,7 @@ class Machine:
         self.pc = 0
         self.acc = 0
         self.memory = []
+        self.looped = False
 
     def parse(self, mnemonics):
         self.memory = []
@@ -20,19 +21,20 @@ class Machine:
     def run(self):
         self.pc = 0
         self.acc = 0
+        self.looped = False
         pc_already_executed = {}
         memory_size = len(self.memory)
         while self.pc < memory_size:
             already_executed = pc_already_executed.get(self.pc, False)
             if already_executed:
-                return True
+                self.looped = True
+                return
             pc_already_executed[self.pc] = True
             operation, arg = self.memory[self.pc]
             operation_method = getattr(self, f'operation_{operation}', None)
             if operation_method is None:
                 raise ValueError(f'Unknown operation "{operation}"')
             operation_method(arg)
-        return False
 
     def operation_nop(self, arg):
         self.pc += 1
@@ -64,8 +66,8 @@ def solve_part_2(part2_input):
         machine.memory = original_memory[:]
         operation, arg = machine.memory[patch_pc]
         machine.memory[patch_pc] = (patched_operation.get(operation, operation), arg)
-        infinite_loop = machine.run()
-        if not infinite_loop:
+        machine.run()
+        if not machine.looped:
             return machine.acc
     raise OverflowError('Unable to patch!')
 
