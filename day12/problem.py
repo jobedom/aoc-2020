@@ -16,10 +16,6 @@ direction_deltas = {
 }
 
 
-def rotate_heading(heading, degrees):
-    return (heading + int(degrees / 90.0) + 4) % 4
-
-
 def solve_part_1(instructions):
     x = 0
     y = 0
@@ -28,9 +24,9 @@ def solve_part_1(instructions):
     for instruction, amount in instructions:
         dx, dy = 0, 0
         if instruction == 'R':
-            heading = rotate_heading(heading, amount)
+            heading = (heading + int(amount / 90.0) + 4) % 4
         elif instruction == 'L':
-            heading = rotate_heading(heading, -amount)
+            heading = (heading - int(amount / 90.0) + 4) % 4
         elif instruction == 'F':
             dx, dy = heading_deltas[heading]
         else:
