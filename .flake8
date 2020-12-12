@@ -1,0 +1,44 @@
+[flake8]
+
+jobs = auto
+verbose = 0
+quiet = 0
+
+format = default
+count = True
+show-source = True
+statistics = True
+
+output-file = .flake8.log
+tee = True
+
+
+exclude =
+    .git,
+    __pycache__,
+
+filename =
+    *.py
+
+
+builtins =
+
+disable-noqa = False
+max-line-length = 120
+max-complexity = 15
+hang-closing = True
+
+ignore =
+    W503
+
+select =
+    E,
+    W,
+    F,
+    C
+
+enable-extensions =
+
+doctests = True
+include-in-doctest =
+exclude-in-doctest =

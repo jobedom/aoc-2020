@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 
 [dev-packages]
+flake8 = "*"
+pycodestyle = "*"
+yapf = "*"
 
 [requires]
 python_version = "3.9"
