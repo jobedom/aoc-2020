@@ -12,14 +12,12 @@ statistics = True
 output-file = .flake8.log
 tee = True
 
-
 exclude =
     .git,
     __pycache__,
 
 filename =
     *.py
-
 
 builtins =
 
