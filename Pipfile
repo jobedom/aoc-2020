@@ -9,6 +9,7 @@ name = "pypi"
 flake8 = "*"
 pycodestyle = "*"
 yapf = "*"
+rope = "*"
 
 [requires]
 python_version = "3.9"
