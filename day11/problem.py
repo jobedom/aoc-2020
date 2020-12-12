@@ -26,7 +26,7 @@ def count_occupied(state):
     return ''.join(''.join(row) for row in state).count('#')
 
 
-def next_state(state, cell_transformer):
+def get_next_state(state, cell_transformer):
     height = len(state)
     width = max(len(row) for row in state)
     result = deepcopy(state)
@@ -40,7 +40,7 @@ def next_state(state, cell_transformer):
     return result, changed
 
 
-def next_state_part_1(state):
+def get_next_state_part_1(state):
     def get_adjacent_occupied_count(current_state, height, width, i, j, match):
         matching_count = 0
         for dy in range(-1, 2):
@@ -63,10 +63,10 @@ def next_state_part_1(state):
             return 'L'
         return None
 
-    return next_state(state, cell_transformer)
+    return get_next_state(state, cell_transformer)
 
 
-def next_state_part_2(state):
+def get_next_state_part_2(state):
     def get_seen_occupied_count(current_state, height, width, i, j, match):
         matching_count = 0
         for dy in range(-1, 2):
@@ -95,15 +95,15 @@ def next_state_part_2(state):
             return 'L'
         return None
 
-    return next_state(state, cell_transformer)
+    return get_next_state(state, cell_transformer)
 
 
 def solve_part_1(state):
-    return count_occupied(stable_state_after_iterations(state, next_state_part_1))
+    return count_occupied(stable_state_after_iterations(state, get_next_state_part_1))
 
 
 def solve_part_2(state):
-    return count_occupied(stable_state_after_iterations(state, next_state_part_2))
+    return count_occupied(stable_state_after_iterations(state, get_next_state_part_2))
 
 
 test_input = get_file_lines_with_no_blanks('test.txt')
