@@ -17,7 +17,7 @@ def solve_part_1(boarding_passes):
 
 def solve_part_2(boarding_passes):
     boarding_pass_ids = [get_boarding_pass_id(boarding_pass) for boarding_pass in boarding_passes]
-    full_plane_ids = list(range(0, 2 ** len(boarding_passes[0])))
+    full_plane_ids = list(range(0, 2**len(boarding_passes[0])))
     missing_ids = list_difference(full_plane_ids, boarding_pass_ids)
     for boarding_pass_id in missing_ids:
         if (boarding_pass_id - 1) in boarding_pass_ids and (boarding_pass_id + 1) in boarding_pass_ids:

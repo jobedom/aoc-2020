@@ -25,15 +25,11 @@ def solve_part_2(part2_input):
     @cache
     def get_combinations(joltage, candidate_adaptors, ignore_adaptor=-1):
         next_adaptors = tuple([
-            adaptor for adaptor in candidate_adaptors
-            if (1 <= adaptor - joltage <= 3) and (adaptor != ignore_adaptor)
+            adaptor for adaptor in candidate_adaptors if (1 <= adaptor - joltage <= 3) and (adaptor != ignore_adaptor)
         ])
         if len(next_adaptors) == 0:
             return 1
-        return sum(
-            get_combinations(next_adaptor, candidate_adaptors, next_adaptor)
-            for next_adaptor in next_adaptors
-        )
+        return sum(get_combinations(next_adaptor, candidate_adaptors, next_adaptor) for next_adaptor in next_adaptors)
 
     adaptors = sorted(part2_input[:])
     adaptors.append(max(adaptors) + 3)

@@ -14,34 +14,13 @@ def no_validation(value, regexp_matches):
 
 
 PASSPORT_VALIDATIONS = {
-    'byr': (
-        r'\d{4}',
-        lambda val, matches: 1920 <= int(val) <= 2002
-    ),
-    'iyr': (
-        r'\d{4}',
-        lambda val, matches: 2010 <= int(val) <= 2020
-    ),
-    'eyr': (
-        r'\d{4}',
-        lambda val, matches: 2020 <= int(val) <= 2030
-    ),
-    'hgt': (
-        r'(\d+)(cm|in)',
-        lambda val, matches: (150 <= int(matches[0]) <= 193) if matches[1] == 'cm' else (59 <= int(matches[0]) <= 76)
-    ),
-    'hcl': (
-        r'#[a-f0-9]{6}',
-        no_validation
-    ),
-    'ecl': (
-        r'(amb|blu|brn|gry|grn|hzl|oth)',
-        no_validation
-    ),
-    'pid': (
-        r'\d{9}',
-        no_validation
-    ),
+    'byr': (r'\d{4}', lambda v, m: 1920 <= int(v) <= 2002),
+    'iyr': (r'\d{4}', lambda v, m: 2010 <= int(v) <= 2020),
+    'eyr': (r'\d{4}', lambda v, m: 2020 <= int(v) <= 2030),
+    'hgt': (r'(\d+)(cm|in)', lambda v, m: (150 <= int(m[0]) <= 193) if m[1] == 'cm' else (59 <= int(m[0]) <= 76)),
+    'hcl': (r'#[a-f0-9]{6}', no_validation),
+    'ecl': (r'(amb|blu|brn|gry|grn|hzl|oth)', no_validation),
+    'pid': (r'\d{9}', no_validation),
 }
 REQUIRED_PASSPORT_KEYS = PASSPORT_VALIDATIONS.keys()
 REQUIRED_PASSPORT_KEY_COUNT = len(REQUIRED_PASSPORT_KEYS)

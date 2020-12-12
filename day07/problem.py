@@ -19,10 +19,8 @@ def contains_bag(definitions, container, bag):
 def bag_contents_count(definitions, bag):
     def bag_contents_count_rec(definitions, bag):
         container_definition = definitions[bag]
-        return 1 + sum(
-            number * bag_contents_count_rec(definitions, contained_bag)
-            for number, contained_bag in container_definition
-        )
+        return 1 + sum(number * bag_contents_count_rec(definitions, contained_bag)
+                       for number, contained_bag in container_definition)
 
     return bag_contents_count_rec(definitions, bag) - 1
 

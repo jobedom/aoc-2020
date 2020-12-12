@@ -56,8 +56,7 @@ def next_state_part_1(state):
     def cell_transformer(height, width, row, column):
         if state[row][column] == '.':
             return None
-        adjacent_occupied_count = get_adjacent_occupied_count(
-            state, height, width, row, column, '#')
+        adjacent_occupied_count = get_adjacent_occupied_count(state, height, width, row, column, '#')
         if state[row][column] == 'L' and adjacent_occupied_count == 0:
             return '#'
         elif state[row][column] == '#' and adjacent_occupied_count >= 4:
@@ -89,8 +88,7 @@ def next_state_part_2(state):
     def cell_transformer(height, width, row, column):
         if state[row][column] == '.':
             return None
-        seen_occupied_count = get_seen_occupied_count(state, height, width,
-                                                      row, column, '#')
+        seen_occupied_count = get_seen_occupied_count(state, height, width, row, column, '#')
         if state[row][column] == 'L' and seen_occupied_count == 0:
             return '#'
         elif state[row][column] == '#' and seen_occupied_count >= 5:
@@ -101,13 +99,11 @@ def next_state_part_2(state):
 
 
 def solve_part_1(state):
-    return count_occupied(
-        stable_state_after_iterations(state, next_state_part_1))
+    return count_occupied(stable_state_after_iterations(state, next_state_part_1))
 
 
 def solve_part_2(state):
-    return count_occupied(
-        stable_state_after_iterations(state, next_state_part_2))
+    return count_occupied(stable_state_after_iterations(state, next_state_part_2))
 
 
 test_input = get_file_lines_with_no_blanks('test.txt')

@@ -28,6 +28,7 @@ hang-closing = True
 
 ignore =
     W503
+    E133
 
 select =
     E,
