@@ -68,7 +68,7 @@ def evaluate_expression(expression, operator_precedences):
                 value_1 = int(operand_stack.pop())
                 value_2 = int(operand_stack.pop())
                 result = operations[operator](value_1, value_2)
-                operand_stack.push(str(result))
+                operand_stack.push(result)
             operator_stack.push(token)
     while operator_stack.not_empty():
         operator = operator_stack.pop()
