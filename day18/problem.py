@@ -47,7 +47,7 @@ def evaluate_expression(expression, operator_precedences):
         '*': lambda x, y: x * y,
     }
 
-    precedences = {'(': 0, ')': 0, None: 1000} | operator_precedences
+    precedences = {'(': 0, ')': 0} | operator_precedences
     operator_stack = Stack()
     operand_stack = Stack()
     for token in tokens:
