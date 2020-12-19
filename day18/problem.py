@@ -7,10 +7,6 @@ from input import get_file_lines_with_no_blanks
 init_day(__file__, 18)
 
 
-def tokenize(text):
-    return [int(item) if item.isdigit() else item for item in re.findall(r'(\d+|\(|\)|[+*])', text)]
-
-
 class Stack:
     def __init__(self):
         self.items = []
