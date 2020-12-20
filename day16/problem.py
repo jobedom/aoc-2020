@@ -20,8 +20,9 @@ def parse_input(problem_input):
             field_matches = re.match(r'^(.+)\s*:', line)
             if field_matches:
                 field = field_matches.group(1)
-                ranges = [(int(range_min), int(range_max))
-                          for range_min, range_max in re.findall(r'(\d+)\-(\d+)', line)]
+                ranges = [
+                    (int(range_min), int(range_max)) for range_min, range_max in re.findall(r'(\d+)\-(\d+)', line)
+                ]
                 fields.append((field, ranges))
     my_ticket = parse_int_list(tickets[0])
     nearby_tickets = [parse_int_list(ticket) for ticket in tickets[1:]]

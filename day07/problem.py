@@ -19,8 +19,10 @@ def contains_bag(definitions, container, bag):
 def bag_contents_count(definitions, bag):
     def bag_contents_count_rec(definitions, bag):
         container_definition = definitions[bag]
-        return 1 + sum(number * bag_contents_count_rec(definitions, contained_bag)
-                       for number, contained_bag in container_definition)
+        return 1 + sum(
+            number * bag_contents_count_rec(definitions, contained_bag)
+            for number, contained_bag in container_definition
+        )
 
     return bag_contents_count_rec(definitions, bag) - 1
 
@@ -40,10 +42,12 @@ def get_bags_definition(input):
 def solve_part_1(input):
     bag = 'shiny gold'
     bags_definition = get_bags_definition(input)
-    return len([
-        container for container in bags_definition.keys()
-        if container != bag and contains_bag(bags_definition, container, bag)
-    ])
+    return len(
+        [
+            container for container in bags_definition.keys()
+            if container != bag and contains_bag(bags_definition, container, bag)
+        ]
+    )
 
 
 def solve_part_2(input):
