@@ -4,7 +4,7 @@
 		{
             "name": "Advent of Code 2020",
 			"path": ".",
-            "file_exclude_patterns": ["*.sublime-workspace"],
+            "file_exclude_patterns": ["*.sublime-workspace", "Pipfile.lock"],
             "follow_symlinks": true,
 
 		}
