@@ -6,11 +6,6 @@ name = "pypi"
 [packages]
 
 [dev-packages]
-flake8 = "*"
-pycodestyle = "*"
-yapf = "*"
-rope = "*"
-ipykernel = "*"
 
 [requires]
 python_version = "3.9"
