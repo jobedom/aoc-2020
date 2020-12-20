@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+            "name": "Advent of Code 2020",
+			"path": ".",
+            "file_exclude_patterns": ["*.sublime-workspace"],
+            "follow_symlinks": true,
+
+		}
+	]
+}
