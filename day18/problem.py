@@ -1,5 +1,4 @@
 import re
-import math
 
 from misc import init_day
 from input import get_file_lines_with_no_blanks
