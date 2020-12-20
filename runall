@@ -2,13 +2,9 @@
 
 SCRIPT_PATH=$(dirname "$0")
 PYTHONPATH=$(realpath "$SCRIPT_PATH")/utils
-PIPENV_IGNORE_VIRTUALENVS=1
-
 export PYTHONPATH
-export PIPENV_IGNORE_VIRTUALENVS
-
 DAY_FOLDERS=$(find . -type d | grep day | sort)
 for FOLDER in $DAY_FOLDERS
 do
-    pipenv run python "$FOLDER/problem.py"
+    python "$FOLDER/problem.py"
 done

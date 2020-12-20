@@ -3,8 +3,5 @@
 SCRIPT_PATH=$(dirname "$0")
 LAST_FOLDER=$(find . -type d | grep day | sort -r | head -n 1)
 PYTHONPATH=$(realpath "$SCRIPT_PATH")/utils
-PIPENV_IGNORE_VIRTUALENVS=1
-
 export PYTHONPATH
-export PIPENV_IGNORE_VIRTUALENVS
-pipenv run python "$LAST_FOLDER/problem.py"
+python "$LAST_FOLDER/problem.py"
