@@ -1,3 +1,8 @@
+def get_file_contents(filename):
+    with open(filename) as file:
+        return file.read().rstrip('\n')
+
+
 def get_file_lines(filename):
     with open(filename) as f:
         lines = f.readlines()
